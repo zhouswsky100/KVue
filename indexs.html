@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{name}}</p>
+        <p k-text="name"></p>
+        <p>{{age}}</p>
+        <input k-model="name">
+        <button @test()></button>
+        <div k-html="html"></div>
+    </div>
+     
+</body>
+<script src="Kvue.js"></script>
+<script src="compile.js"></script>
+
+<script>
+        const app = new kVue({
+            el:"#app",
+            data:{
+                test:"gdgf",
+                age:"19",
+                name:"小李",
+                html:"<h1>3132</h1>",
+                foo:{
+                    bar:'bar'
+                }
+            },
+            created(){
+                setTimeout(()=>{
+                    this.name ="test"
+                },1000)
+            },
+            methods:{
+                changeName(){
+                    this.name = "updata"
+                    this.age = "20"
+                }
+                
+            }
+
+        });
+        
+     
+    
+    
+    
+    
+    </script>
+    
+</html>
